@@ -678,6 +678,10 @@ body::after {
         white-space: nowrap;
     }
 
+    .main-nav a[href="about.html"] {
+    margin-left: 15px;
+    }
+
     .main-nav a:hover {
         transform: none;
     }
