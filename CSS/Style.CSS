@@ -631,3 +631,67 @@ body::after {
     background: lightblue;
     color: #000039;
 }
+
+/* MOBILE - PHONES (below 600px) */
+
+@media screen and (max-width: 599px) {
+
+    /* Navigation */
+    .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .main-nav a,
+    .main-nav button {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    /* Introduction paragraph */
+    #intro {
+        font-size: 16px;
+        line-height: 1.6;
+        padding: 0 15px;
+    }
+
+    /* Destination cards */
+    .destination-container {
+        max-width: 100%;
+    }
+
+}
+
+
+/*TABLET (600px - 1024px) */
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+
+    .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #intro {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+}
+
+
+/* DESKTOP (above 1024px) */
+
+@media screen and (min-width: 1025px) {
+
+    .main-nav {
+        flex-wrap: nowrap;
+    }
+
+}
