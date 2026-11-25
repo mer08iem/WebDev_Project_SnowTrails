@@ -319,9 +319,7 @@ summary:focus-visible {
     outline-offset: 3px;
 }
 
-/*
-   HORIZONTAL DESTINATION EXPLORER
-*/
+/* HORIZONTAL DESTINATION EXPLORER */
 
 /* Destination container */
 
@@ -610,11 +608,13 @@ body::after {
 }
 
 /* Hide snowfall completely when Reduce Motion is enabled */
+
 .reduce-motion::after {
     display: none;
 }
 
 /* Style the Reduce Motion button in the navbar */
+
 #motion-toggle {
     background: lightblue;
     color: #000039;
@@ -636,23 +636,38 @@ body::after {
 
 @media screen and (max-width: 599px) {
 
-    /* Navigation */
     .main-nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         gap: 10px;
-        padding: 12px;
+        padding: 5px;
     }
 
-    .main-nav a,
-    .main-nav button {
-        font-size: 13px;
+    /* Remove large crystal shapes on mobile */
+
+    .main-nav a {
+        width: auto;
+        height: auto;
+        min-width: 0;
+
+        clip-path: none;
+        background: transparent;
+
+        font-size: 14px;
         padding: 8px 10px;
+
+        color: lightblue;
+        white-space: nowrap;
+    }
+
+    .main-nav a:hover {
+        transform: none;
     }
 
     /* Introduction paragraph */
+
     #intro {
         font-size: 16px;
         line-height: 1.6;
@@ -660,14 +675,13 @@ body::after {
     }
 
     /* Destination cards */
+
     .destination-container {
         max-width: 100%;
     }
-
 }
 
-
-/*TABLET (600px - 1024px) */
+/* TABLET (600px - 1024px) */
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
 
@@ -682,9 +696,7 @@ body::after {
         font-size: 17px;
         line-height: 1.6;
     }
-
 }
-
 
 /* DESKTOP (above 1024px) */
 
@@ -693,20 +705,4 @@ body::after {
     .main-nav {
         flex-wrap: nowrap;
     }
-
-}
-
-/* Smaller navbar crystals on mobile */
-@media screen and (max-width: 599px) {
-
-    .main-nav a {
-        font-size: 12px;
-        padding: 6px 8px;
-    }
-
-    .main-nav a:first-child,
-    .main-nav a:last-child {
-        white-space: nowrap;
-    }
-
 }
