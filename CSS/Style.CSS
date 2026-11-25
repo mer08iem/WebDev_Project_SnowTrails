@@ -695,3 +695,18 @@ body::after {
     }
 
 }
+
+/* Smaller navbar crystals on mobile */
+@media screen and (max-width: 599px) {
+
+    .main-nav a {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .main-nav a:first-child,
+    .main-nav a:last-child {
+        white-space: nowrap;
+    }
+
+}
