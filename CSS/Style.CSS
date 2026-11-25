@@ -635,6 +635,10 @@ body::after {
 /* MOBILE - PHONES (below 600px) */
 
 @media screen and (max-width: 599px) {
+    /* Smaller title on mobile */
+    h1 {
+        font-size: 22px;
+    }
 
     .main-nav {
         display: flex;
