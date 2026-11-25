@@ -2,49 +2,155 @@
 <html lang="en">
 
 <head>
-    <title>Snow Trails Travel Agency</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glacier Heights | Winter Adventures</title>
     <link rel="stylesheet" href="CSS/Style.CSS">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
+
     <header>
-        <nav>
-            <a href="index.html">Home</a><a href="about.html">About</a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">&#x2744; Home</a>
+            <a href="about.html">&#x2744; About</a>
         </nav>
 
-        <h1>Snow Trails Travel Agency</h1>
+        <h1>Glacier Heights</h1>
     </header>
+
     <main>
-    <p>Discover affordable, rare winter destinations and step into the unknown. There are sports such as skiing, snowboarding, ice skating and many more.</p>
 
-    <h2 id= "destinations">Winter Destinations </h2>
+        <!-- Homepage introduction -->
 
-    <h3>Europe</h3>
+        <p id="intro">Chase the snow. Discover the unexpected. From snowboarding and skiing to hidden winter destinations, Climb heights and discovers breathtaking views of the snow covered peaks. Glacier Heights is all about unforgettable adventures.</p>
 
-    <img src="https://images.pexels.com/photos/35961929/pexels-photo-35961929.jpeg" alt="Bansko, Bulgaria" width="400" class="center">
+        <!-- Winter destinations heading and controls -->
 
-    <p><b>Snowy mountains in Bansko, Bulgaria</b></p>
+        <div class="destination-header">
 
-    <p>Explore winter destinations across Europe at affordable prices.</p>
+            <h2 id="destinations">Winter Destinations</h2>
 
-    <h3>Asia</h3>
+            <div class="destination-controls">
 
-    <img src="ira_b-mountains-4895879_1920 copy.jpg" alt="Shymbulak ski resort in Almaty, Kazakhstan" width="400" class="center">
+                <button type="button" id="previous-destination">
+                    Previous
+                </button>
 
-    <p><b>Shymbulak ski resort in Almaty, Kazakhstan</b></p>
+                <button type="button" id="next-destination">
+                    Next
+                </button>
 
-    <p>Explore different and unexpected winter destinations across Asia at cheaper prices.</p>
+                <button type="button" id="motion-toggle" aria-pressed="false">
+                    Reduce Motion: OFF
+                </button>
 
-    <h3>North America</h3>
+            </div>
 
-    <img src="iulian_ursache-ski-5453190_1920.jpg" alt="Mont-Tremblant, Quebec, Canada" width="400" class="center">
+        </div>
 
-    <p><b>Snowy village in Mont-Tremblant, Quebec, Canada</b></p>
+        <!-- Horizontal destination explorer -->
 
-    <p>Discover snowy mountains and enjoy many different sports at much cheaper prices.</p>
+        <div class="destination-container"
+             id="destination-container"
+             tabindex="0"
+             aria-label="Winter destinations">
+
+            <!-- Europe destination card -->
+
+            <div class="destination-card">
+
+                <h3>Europe</h3>
+                <p class="tagline">A winter escape worth discovering</p>
+
+                <img src="https://images.pexels.com/photos/35961929/pexels-photo-35961929.jpeg"
+                     alt="Snow-covered mountains in Bansko, Bulgaria"
+                     width="400"
+                     class="center">
+
+                <p><b>Snowy mountains in Bansko, Bulgaria</b></p>
+
+                <p>Explore the snowy mountains of Bulgaria, take on exciting ski slopes and enjoy everything this beautiful winter destination has to offer. There's plenty to discover, whether you're skiing, snowboarding or simply enjoying the views!</p>
+
+            </div>
+
+            <!-- Asia destination card -->
+
+            <div class="destination-card">
+
+                <h3>Asia</h3>
+                <p class="tagline">Discover hidden gems of Central Asia.</p>
+
+                <img src="ira_b-mountains-4895879_1920 copy.jpg"
+                     alt="Shymbulak ski resort in Almaty, Kazakhstan"
+                     width="400"
+                     class="center">
+
+                <p><b>Shymbulak ski resort in Almaty, Kazakhstan</b></p>
+
+                <p>Experience the beauty of Kazakhstan's mountains at Shymbulak. Enjoy the snowy slopes, take in the incredible views and make the most of everything this winter destination has to offer.</p>
+
+            </div>
+
+            <!-- North America destination card -->
+
+            <div class="destination-card">
+
+                <h3>North America</h3>
+                <p class="tagline">Exploring with no limits.</p>
+
+                <img src="iulian_ursache-ski-5453190_1920.jpg"
+                     alt="Snowy village in Mont-Tremblant, Quebec, Canada"
+                     width="400"
+                     class="center">
+
+                <p><b>Snowy village in Mont-Tremblant, Quebec, Canada</b></p>
+
+                <p>Discover the charm of Mont-Tremblant, from its beautiful snowy village to its exciting ski slopes. Whether you're hitting the slopes or exploring the mountain scenery, there's something for everyone to enjoy.</p>
+
+            </div>
+
+            <!-- South America destination card -->
+
+            <div class="destination-card">
+
+                <h3>South America</h3>
+                <p class="tagline">Explore beyond the ordinary.</p>
+
+                <img src="images/pexels-chrisfotope-34639281 (1).jpg"
+                     alt="Snow-covered peaks of the Cordillera Blanca in Peru"
+                     width="400"
+                     class="center">
+
+                <p><b>Cordillera Blanca, Huaraz, Peru</b></p>
+
+                <p>Discover the stunning mountains of Peru's Cordillera Blanca. From snow-covered peaks to beautiful glacial lakes, it's a wonderful place to explore, take in the scenery and experience the Andes mountains.</p>
+
+            </div>
+
+        </div>
 
     </main>
-</body>
 
+    <!-- Website footer -->
+
+    <footer class="site-footer">
+
+        <h2>❄ Glacier Heights</h2>
+
+        <p>Your next winter adventure starts here.</p>
+
+        <nav aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <p class="copyright">
+            &copy; 2026 Glacier Heights. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
 </html>

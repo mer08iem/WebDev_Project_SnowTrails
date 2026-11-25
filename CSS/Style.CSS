@@ -7,6 +7,7 @@ body {
 }
 
 /* Faded background image */
+
 body::before {
     content: "";
     position: fixed;
@@ -19,7 +20,6 @@ body::before {
     opacity: 0.4;
     z-index: -1;
     pointer-events: none;
-    
 }
 
 /* Header */
@@ -43,14 +43,57 @@ header {
 nav {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
-nav a {
-    color: lightblue;
+/* Six-pointed icy crystal navigation buttons */
+
+.main-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 125px;
+    height: 105px;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #b8edff,
+        #70c5e8
+    );
+
+    color: #000039;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+
+    clip-path: polygon(
+        50% 0%,
+        62% 28%,
+        90% 10%,
+        75% 40%,
+        100% 50%,
+        75% 60%,
+        90% 90%,
+        62% 72%,
+        50% 100%,
+        38% 72%,
+        10% 90%,
+        25% 60%,
+        0% 50%,
+        25% 40%,
+        10% 10%,
+        38% 28%
+    );
+
+    transition: transform 0.3s ease;
 }
 
-nav a:hover {
-    color: white;
+/* Crystal hover effect */
+
+.main-nav a:hover {
+    transform: scale(1.08);
 }
 
 /* Main heading */
@@ -102,13 +145,86 @@ p:hover {
 /* Other headings */
 
 #destinations {
-    color: #000039;
+    color: white;
     text-align: center;
+    padding: 10px;
+    margin: 0;
+    background: none;
+    border: none;
+}
+
+/* Destination heading and controls panel */
+
+.destination-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    background-color: #000039;
+    border-bottom: 3px solid lightblue;
+    border-radius: 0;
+
+    padding: 15px 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+/* Group the three destination buttons */
+
+.destination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Destination navigation buttons */
+
+.destination-controls button {
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #b8edff,
+        #70c5e8
+    );
+
+    color: #000039;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+
+    border: 2px solid lightblue;
+    border-radius: 8px;
+
+    padding: 12px 18px;
+    cursor: pointer;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover effect */
+
+.destination-controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(173, 216, 230, 0.4);
+}
+
+/* Keyboard focus for destination buttons */
+
+.destination-controls button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
 }
 
 h3 {
-    color: black;
+    color: #000039;
     text-align: center;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Centre images */
@@ -119,12 +235,35 @@ h3 {
     margin-right: auto;
     width: 50%;
     max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lift image when hovering */
+
+.center:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+}
+
+/* Respect reduced motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .center {
+        transition: none;
+    }
+
+    .center:hover {
+        transform: none;
+    }
 }
 
 /* Image border */
 
 img {
     border: 5px solid lightblue;
+    box-sizing: border-box;
 }
 
 /* About.html code only */
@@ -139,6 +278,35 @@ summary {
     font-size: 22px;
 }
 
+/* Lucas's image and biography layout */
+
+.lucas-profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 15px;
+}
+
+/* Lucas's image */
+
+.lucas-profile img {
+    width: 300px;
+    max-width: 40%;
+    height: 218px;
+    flex-shrink: 0;
+    border: 3px solid #000039;
+    border-radius: 10px;
+}
+
+/* Lucas's biography */
+
+.lucas-bio {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    margin: 0;
+}
+
 /* Keyboard accessibility */
 
 nav a:focus-visible {
@@ -149,4 +317,317 @@ nav a:focus-visible {
 summary:focus-visible {
     outline: 3px solid #000039;
     outline-offset: 3px;
+}
+
+/*
+   HORIZONTAL DESTINATION EXPLORER
+*/
+
+/* Destination container */
+
+.destination-container {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 25px 5%;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: lightblue #000039;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Individual destination cards */
+
+.destination-card {
+    flex: 0 0 90%;
+    min-width: 0;
+    background-color: rgba(173, 216, 230, 0.85);
+    border: 2px solid #000039;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Gentle destination card hover effect */
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Destination headings */
+
+.destination-card h3 {
+    margin: 5px 0 20px;
+    font-size: 30px;
+}
+
+/* Destination images */
+
+.destination-card .center {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+/* Destination descriptions */
+
+.destination-card p {
+    font-size: 19px;
+    line-height: 1.6;
+    text-align: left;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 5px 0;
+    margin: 15px 0;
+    max-width: none;
+}
+
+/* Remove paragraph hover effect inside cards */
+
+.destination-card p:hover {
+    transform: none;
+}
+
+/* Smaller screens */
+
+@media (max-width: 600px) {
+
+    .destination-card {
+        flex-basis: 95%;
+        padding: 15px;
+    }
+
+    .destination-card .center {
+        height: 220px;
+    }
+
+    .destination-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .lucas-profile {
+        flex-direction: column;
+    }
+
+    .lucas-profile img {
+        max-width: 100%;
+    }
+
+    /* Mobile destination navigation panel */
+
+    .destination-header {
+        flex-direction: column;
+        align-items: center;
+        margin: 15px 0;
+        padding: 15px;
+    }
+
+    .destination-controls {
+        justify-content: center;
+    }
+
+    .destination-controls button {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}
+
+/* Homepage introduction */
+
+#intro {
+    max-width: 1150px;
+    margin: 35px auto 45px;
+    padding: 20px 25px;
+
+    font-size: 23px;
+    line-height: 1.9;
+    text-align: center;
+
+    color: lightblue;
+    background-color: rgba(19, 1, 58, 0.92);
+
+    border-left: 5px solid lightblue;
+    border-radius: 12px;
+
+    box-sizing: border-box;
+}
+
+/* Reduced motion for navigation */
+
+@media (prefers-reduced-motion: reduce) {
+    .main-nav a {
+        transition: none;
+    }
+
+    .main-nav a:hover {
+        transform: none;
+    }
+}
+
+/* Destination taglines */
+
+.destination-card .tagline {
+    color: #000039;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 5px auto 20px;
+    background: transparent;
+    border: none;
+    padding: 5px;
+}
+
+/* Gentle snowfall effect */
+
+body::after {
+    content: "";
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, white 99%, transparent),
+        radial-gradient(3px 3px at 100px 150px, white 99%, transparent),
+        radial-gradient(2px 2px at 200px 80px, white 99%, transparent),
+        radial-gradient(3px 3px at 300px 200px, white 99%, transparent);
+
+    background-size: 350px 250px;
+
+    animation: snowfall 18s linear infinite;
+}
+
+/* Snow falling movement */
+
+@keyframes snowfall {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100px 500px;
+    }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    body::after {
+        animation: none;
+    }
+}
+
+/* Website footer */
+
+.site-footer {
+    background-color: rgba(0, 0, 57, 0.96);
+    border-top: 2px solid lightblue;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.site-footer h2 {
+    color: lightblue;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.site-footer p {
+    color: lightblue;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.site-footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 15px 0;
+}
+
+.site-footer nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer nav a:hover {
+    color: lightblue;
+}
+
+.site-footer .copyright {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* Reduced motion accessibility for destination cards and buttons */
+
+@media (prefers-reduced-motion: reduce) {
+    .destination-card,
+    .destination-controls button {
+        transition: none;
+    }
+
+    .destination-card:hover,
+    .destination-controls button:hover {
+        transform: none;
+    }
+}
+
+/* Reduce animations when requested */
+
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+}
+
+/* Stop animations on the body's own background effects */
+
+.reduce-motion::before,
+.reduce-motion::after {
+    animation: none !important;
+}
+
+/* Hide snowfall completely when Reduce Motion is enabled */
+.reduce-motion::after {
+    display: none;
+}
+
+/* Style the Reduce Motion button in the navbar */
+#motion-toggle {
+    background: lightblue;
+    color: #000039;
+    border: 1px solid lightblue;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#motion-toggle:hover {
+    background: lightblue;
+    color: #000039;
 }

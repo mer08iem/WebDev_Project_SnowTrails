@@ -3,23 +3,55 @@
 <head>
     <title>About Snow Trails Agency</title>
     <link rel="stylesheet" href="CSS/Style.CSS">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-    </nav>
+     <header>
+        <nav class="main-nav" aria-label="Main navigation">
+            <button type="button" id="motion-toggle" aria-pressed="false">
+                Reduce Motion: OFF
+            </button>
+            <a href="index.html">&#x2744; Home</a>
+            <a href="about.html">&#x2744; About</a>
+        </nav>
 
-    <h1>About Snow Trails Agency</h1>
+        <h1>Glacier Heights</h1>
     </header>
     <br>
     
-    <details>
-        <summary>Lucas Snow's Story</summary>
-        <p>Lucas Snow, the founder of Snow Trails Agency, has a passion for adventures in snowy destinations and winter sports. He wants his website to be dynamic and exciting to inspire more people to travel, explore different winter destinations and enjoy sports such as skiing, ice skating and snowboarding. He hopes people can create many fun and unforgettable memories from their snowy adventures.</p>
-    </details>
+   <details>
+    <summary>Lucas Snow's Story</summary>
+
+    <div class="lucas-profile">
+        <img src="images/Lucas Image .png"
+             alt="Lucas Snow (Co-founder)"
+             width="400">
+
+        <p class="lucas-bio">
+            Lucas Snow, the founder of Snow Trails Agency, has a passion for adventures in snowy destinations and winter sports. He wants his website to be dynamic and exciting to inspire more people to travel, explore different winter destinations and enjoy sports such as skiing, ice skating and snowboarding. He hopes people can create many fun and unforgettable memories from their snowy adventures.
+        </p>
+    </div>
+     <br>
+</details>
     
+<!-- Website footer -->
+
+    <footer class="site-footer">
+
+        <h2>❄ Glacier Heights</h2>
+
+        <p>Your next winter adventure starts here.</p>
+
+        <nav aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <p class="copyright">
+            &copy; 2026 Glacier Heights. All rights reserved.
+        </p>
+
+    </footer>
 </body>
 </html>
